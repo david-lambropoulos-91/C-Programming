@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+/* This program counts the amount of tabs, newlines and spaces 
+   that have been entered during the excution of this program. */
+
+main()
+{
+	int c, nt, ns, nl;
+	nt = 0;
+	nl = 0;
+	ns = 0;
+
+	while ((c = getchar()) != EOF)
+	{
+		if(c == '\t')
+			++nt;
+		else if(c == '\n')
+			++nl;
+		else if(c == ' ')
+			++ns;
+	}
+
+	printf("There have been %i spaces, %i newlines and %i tabs", ns, nl, nt);
+	printf(" entered during the execution of this program.\n");
+}
