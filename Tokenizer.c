@@ -1,22 +1,23 @@
 /*
 * tokenizer.c
 * Name : Demetrios Lambropoulos
-* 		   David Lambropoulos
-* Date : Tuesday, February 10, 2015
+* 		 David Lambropoulos
+* Date : Wednesday, February 11, 2015
 */
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 #include <assert.h>
 #include <stdlib.h>
+#include <time.h>
 /*
-* Tokenizer type. You need to fill in the type as part of your implementation.
+* Tokenizer type.
 */
 struct TokenizerT_
 {
-	char *str; // char pointer to point to pointer at argv[num] - Jan 31 22:35
-	int curChar; // current string index - Jan 31 22:35
-	int manyTokens; // amount of tokens contained in argv[num] - Jan 31 22:35
+	char *str; // char pointer to point to pointer at argv[num]
+	int curChar; // current string index
+	int manyTokens; // amount of tokens contained in argv[num]
 	char **tokens;
 	char **tokenDesc;
 	int strSize;
@@ -35,7 +36,6 @@ typedef struct TokenizerT_ TokenizerT;
 * If the function succeeds, it returns a non-NULL TokenizerT.
 * Else it returns NULL.
 *
-* You need to fill in this function as part of your implementation.
 */
 TokenizerT *TKCreate( char *ts )
 {
@@ -73,7 +73,6 @@ TokenizerT *TKCreate( char *ts )
 * TKDestroy destroys a TokenizerT object. It should free all dynamically
 * allocated memory that is part of the object being destroyed.
 *
-* You need to fill in this function as part of your implementation.
 */
 void TKDestroy( TokenizerT * tk )
 {
@@ -92,6 +91,148 @@ void TKDestroy( TokenizerT * tk )
 	free(tk);
 }
 
+/**
+ * isKeyword returns an integer 0 (FALSE) or 1 (TRUE),
+ * as to whether or not its argument of a char pointer
+ * is equivalent to a keyword as defined in the ANSI C
+ * Standard.
+ */
+int isKeyword(const char *word)
+{
+	int isKey = 0;
+
+	if(strcmp("auto", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("break", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("case", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("char", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("const", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("continue", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("default", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("do", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("double", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("else", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("enum", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("extern", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("float", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("for", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("goto", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("if", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("int", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("long", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("register", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("return", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("short", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("signed", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("sizeof", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("static", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("struct", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("switch", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("typedef", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("union", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("unsigned", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("void", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("volatile", word) == 0)
+	{
+		isKey = 1;
+	}
+	else if(strcmp("while", word) == 0)
+	{
+		isKey = 1;
+	}
+
+	return isKey;
+}
+
 /*
 * TKGetNextToken returns the next token from the token stream as a
 * character string. Space for the returned token should be dynamically
@@ -101,7 +242,6 @@ void TKDestroy( TokenizerT * tk )
 * If the function succeeds, it returns a C string (delimited by '\0')
 * containing the token. Else it returns 0.
 *
-* You need to fill in this function as part of your implementation.
 */
 
 char *TKGetNextToken( TokenizerT * tk )
@@ -134,7 +274,24 @@ char *TKGetNextToken( TokenizerT * tk )
 	* next time the method is called it will start after the
 	* whitespace character.
 	*/
-	if((char)tk->str[tk->curChar] == ' ')
+	if((char)tk->str[tk->curChar] == '\'')
+	{
+		tk->curChar++;
+		while((char)tk->str[tk->curChar] != '\'')
+		{
+			if((char)tk->str[tk->curChar] == '\0')
+			{
+				break;
+			}
+			arr[i] = tk->str[tk->curChar];
+			i++;
+			tk->curChar++;
+		}
+		tk->curChar++;
+		tk->tokenDesc[tk->manyTokens] = "user defined token";
+		break;
+	}
+	else if((char)tk->str[tk->curChar] == ' ' || (char)tk->str[tk->curChar] == '\t' || (char)tk->str[tk->curChar] == '\n')
 	{ // Begin if-statement
 		tk->curChar++;
 		if((char)tk->str[tk->curChar] == '\0')
@@ -157,17 +314,31 @@ char *TKGetNextToken( TokenizerT * tk )
 			arr[i] = tk->str[tk->curChar];
 			i++;
 			tk->curChar++;
-		} //
-		tk->tokenDesc[tk->manyTokens] = "word";
+		} // End while loop
+		if(isKeyword(arr))
+		{
+			tk->tokenDesc[tk->manyTokens] = "keyword";
+		}
+		else
+		{
+			tk->tokenDesc[tk->manyTokens] = "word";
+		}
 		break;
 	}
-	else if((char)tk->str[tk->curChar] == '.')
+	else if(tk->str[tk->curChar] == '.')
 	{
-
-		tk->tokenDesc[tk->manyTokens] = "float";
 		arr[i] = tk->str[tk->curChar];
 		i++;
 		tk->curChar++;
+		if(!isdigit(tk->str[tk->curChar]))
+		{
+			tk->tokenDesc[tk->manyTokens] = "Structure Member";
+			break;
+		}
+		else
+		{
+			tk->tokenDesc[tk->manyTokens] = "float";
+		}
 		while(isdigit(tk->str[tk->curChar]))
 		{
 			arr[i] = tk->str[tk->curChar];
@@ -245,10 +416,18 @@ char *TKGetNextToken( TokenizerT * tk )
 			}
 			else if((char)tk->str[tk->curChar] == '.')
 			{
-				tk->tokenDesc[tk->manyTokens] = "float";
 				arr[i] = tk->str[tk->curChar];
 				i++;
 				tk->curChar++;
+				if(!isdigit(tk->str[tk->curChar]))
+				{
+					tk->tokenDesc[tk->manyTokens] = "Structure Member";
+					break;
+				}
+				else
+				{
+					tk->tokenDesc[tk->manyTokens] = "float";
+				}
 				while(isdigit(tk->str[tk->curChar]))
 				{
 					arr[i] = tk->str[tk->curChar];
@@ -310,10 +489,15 @@ char *TKGetNextToken( TokenizerT * tk )
 			}
 			else if((char)tk->str[tk->curChar] == '.')
 			{
-				tk->tokenDesc[tk->manyTokens] = "float";
 				arr[i] = tk->str[tk->curChar];
 				i++;
 				tk->curChar++;
+				if(!isdigit(tk->str[tk->curChar]))
+				{
+					tk->tokenDesc[tk->manyTokens] = "Structure Member";
+					break;
+				}
+				tk->tokenDesc[tk->manyTokens] = "float";
 				while(isdigit(tk->str[tk->curChar]))
 				{
 					arr[i] = tk->str[tk->curChar];
@@ -385,6 +569,27 @@ char *TKGetNextToken( TokenizerT * tk )
 		tk->curChar++;
 		break;
 	}
+	else if((char)tk->str[tk->curChar] == '{')
+	{
+		arr[i] = tk->str[tk->curChar];
+		tk->tokenDesc[tk->manyTokens] = "left curly brace";
+		tk->curChar++;
+		break;
+	}
+	else if((char)tk->str[tk->curChar] == '}')
+	{
+		arr[i] = tk->str[tk->curChar];
+		tk->tokenDesc[tk->manyTokens] = "right curly brace";
+		tk->curChar++;
+		break;
+	}
+	else if((char)tk->str[tk->curChar] == '_')
+	{
+		arr[i] = tk->str[tk->curChar];
+		tk->tokenDesc[tk->manyTokens] = "UnderScore";
+		tk->curChar++;
+		break;
+	}
 	else if((char)tk->str[tk->curChar] == '+')
 	{
 		arr[i] = tk->str[tk->curChar];
@@ -423,6 +628,12 @@ char *TKGetNextToken( TokenizerT * tk )
 			tk->tokenDesc[tk->manyTokens] = "decrement";
 			tk->curChar++;
 		}
+		else if((char)tk->str[tk->curChar] == '>')
+		{
+			arr[i] = tk->str[tk->curChar];
+			tk->tokenDesc[tk->manyTokens] = "structure pointer";
+			tk-> curChar++;
+		}
 		break;
 	}
 	else if((char)tk->str[tk->curChar] == '=')
@@ -457,7 +668,7 @@ char *TKGetNextToken( TokenizerT * tk )
 	}
 	else if((char)tk->str[tk->curChar] == '/')
 	{
-       	tk->curChar++;
+     	tk->curChar++;
        	if((char)tk->str[tk->curChar] == '/')
        	{
        		while((char)tk->str[tk->curChar] != '\n')
@@ -478,21 +689,38 @@ char *TKGetNextToken( TokenizerT * tk )
        		}
        		break;
 		}
-       	else
-       	{
-       		arr[i] = tk->str[tk->curChar - 1];
-       		arr[i + 1] = tk->str[tk->curChar];
-       		i+=2;
-       		tk->tokenDesc[tk->manyTokens] = "Binary Operator: divide";
-       		tk->curChar++;
-       	}
-        if((char)tk->str[tk->curChar] == '=')
+       	else if((char)tk->str[tk->curChar] == '=')
         {
-            arr[i] = tk->str[tk->curChar];
+       		arr[i] = tk->str[tk->curChar-1];
+            arr[i+1] = tk->str[tk->curChar];
             i++;
             tk->tokenDesc[tk->manyTokens] = "Assignment Operator: divideEquals";
 			tk->curChar++;
+			break;
         }
+       	else if((char)tk->str[tk->curChar] == '*')
+       	        {
+       	        	tk->curChar++;
+       	        	while((char)tk->str[tk->curChar] != '\0')
+       	        	{
+       	        	       if((char)tk->str[tk->curChar] == '*')
+       	        	       {
+       	        	    	   if((char)tk->str[tk->curChar+1] == '/')
+       	        	    	   {
+       	        	    		   tk->curChar+=2;
+       	        	    		   break;
+       	        	    	   }
+       	        	       }
+       	        	       tk->curChar++;
+       	        	 }
+       	        	 break;
+       	        }
+       	else
+       	{
+       		arr[i] = tk->str[tk->curChar - 1];
+       		tk->tokenDesc[tk->manyTokens] = "Binary Operator: divide";
+       	}
+
         break;
     }
 	else if((char)tk->str[tk->curChar] == '%')
@@ -540,6 +768,97 @@ char *TKGetNextToken( TokenizerT * tk )
 		}
 		break;
 	}
+	else if((char)tk->str[tk->curChar] == ';')
+	{
+			arr[i] = tk->str[tk->curChar];
+			i++;
+			tk->tokenDesc[tk->manyTokens] = "Statement Terminator";
+			tk->curChar++;
+			break;
+	}
+	else if((char)tk->str[tk->curChar] == ':')
+	{
+			arr[i] = tk->str[tk->curChar];
+			i++;
+			tk->tokenDesc[tk->manyTokens] = "Colon";
+			tk->curChar++;
+			break;
+	}
+	else if((char)tk->str[tk->curChar] == '|')
+	{
+			arr[i] = tk->str[tk->curChar];
+			i++;
+			tk->tokenDesc[tk->manyTokens] = "Bitwise Or";
+			tk->curChar++;
+			if((char)tk->str[tk->curChar] == '|')
+			{
+				arr[i] = tk->str[tk->curChar];
+				i++;
+				tk->tokenDesc[tk->manyTokens] = "Logical Or";
+				tk->curChar++;
+			}
+			else if((char)tk->str[tk->curChar] == '=')
+			{
+				arr[i] = tk->str[tk->curChar];
+				i++;
+				tk->tokenDesc[tk->manyTokens] = "Assignment Operator";
+				tk->curChar++;
+			}
+			break;
+	}
+	else if((char)tk->str[tk->curChar] == '!')
+	{
+			arr[i] = tk->str[tk->curChar];
+			i++;
+			tk->tokenDesc[tk->manyTokens] = "Unary Operator: Negate";
+			tk->curChar++;
+			if((char)tk->str[tk->curChar] == '=')
+			{
+				arr[i] = tk->str[tk->curChar];
+				i++;
+				tk->tokenDesc[tk->manyTokens] = "Binary Operator: Not Equals";
+				tk->curChar++;
+			}
+			break;
+	}
+	else if((char)tk->str[tk->curChar] == '&')
+	{
+			arr[i] = tk->str[tk->curChar];
+			i++;
+			tk->tokenDesc[tk->manyTokens] = "Bitwise And";
+			tk->curChar++;
+			if((char)tk->str[tk->curChar] == '&')
+			{
+				arr[i] = tk->str[tk->curChar];
+				i++;
+				tk->tokenDesc[tk->manyTokens] = "Logical And";
+				tk->curChar++;
+			}
+			else if((char)tk->str[tk->curChar] == '=')
+			{
+				arr[i] = tk->str[tk->curChar];
+				i++;
+				tk->tokenDesc[tk->manyTokens] = "Assignment Operator";
+				tk->curChar++;
+			}
+			break;
+	}
+	else if((char)tk->str[tk->curChar] == '?')
+	{
+			arr[i] = tk->str[tk->curChar];
+			i++;
+			tk->tokenDesc[tk->manyTokens] = "Ternary Operator";
+			tk->curChar++;
+			break;
+	}
+	else if((char)tk->str[tk->curChar] == ',')
+	{
+			arr[i] = tk->str[tk->curChar];
+			i++;
+			tk->tokenDesc[tk->manyTokens] = "Comma Operator";
+			tk->curChar++;
+			break;
+	}
 	else if((char)tk->str[tk->curChar] == '>')
 	{
 		arr[i] = tk->str[tk->curChar];
@@ -566,6 +885,25 @@ char *TKGetNextToken( TokenizerT * tk )
 				i++;
 				tk->tokenDesc[tk->manyTokens] = "Assignment Operator: Right Shift Equal To";
 			}
+		}
+		break;
+	}
+	else if((char)tk->str[tk->curChar] == '#')
+	{
+		arr[i] = tk->str[tk->curChar];
+		i++;
+		tk->curChar++;
+		tk->tokenDesc[tk->manyTokens] = "Preprocessor Directive";
+		while((char)tk->str[tk->curChar] != '\n')
+		{
+			if((char)tk->str[tk->curChar] == '\0')
+			{
+				break;
+			}
+			arr[i] = tk->str[tk->curChar];
+			i++;
+			tk->curChar++;
+
 		}
 		break;
 	}
@@ -627,6 +965,14 @@ char *TKGetNextToken( TokenizerT * tk )
 		tk->curChar++;
 		break;
 	}
+	else
+	{
+		arr[i] = tk->str[tk->curChar];
+		i++;
+		tk->tokenDesc[tk->manyTokens] = "Unknown Operator";
+		tk->curChar++;
+		break;
+	}
 	} // End while-loop
 	return arr;
 } // End TKGetNextToken
@@ -642,8 +988,13 @@ int main(int argc, char **argv)
 	/**
 	* Build a structure of type TokenizerT.
 	*/
+	//Begin timing the program
+	clock_t begin, end;
+	double time_spent;
+
+	begin = clock();
 	struct TokenizerT_ *tk = TKCreate(argv[1]);
-	printf("Original string: %s\n", tk->str);
+	printf("Original string:\n %s\n\n", tk->str);
 	while(tk->str[tk->curChar] != '\0')
 	{ // Begin while-loop
 		if (tk->curChar > tk->strSize-1)
@@ -653,13 +1004,26 @@ int main(int argc, char **argv)
 		tk->tokens[tk->manyTokens] = TKGetNextToken(tk);
 		if(tk->tokenDesc[tk->manyTokens] != NULL)
 		{ // Begin if-statement
-			printf("%s is a %s\n", tk->tokens[tk->manyTokens], tk->tokenDesc[tk->manyTokens]) ;
+			printf("\"%s\" is a %s\n", tk->tokens[tk->manyTokens], tk->tokenDesc[tk->manyTokens]) ;
 			tk->manyTokens++;
 		} // End if-statement
+
 	} // End while-loop
 
-	printf("Original string analtered after tokenizing: %s\n", tk->str);
+	// Print the original string back to the user to prove it was unaltered
+	printf("\nOriginal string unaltered after tokenizing:\n %s\n", tk->str);
+
 	// Destroy the Tokenizer structure.
 	TKDestroy(tk);
+
+	//Stop timing program
+	end = clock();
+
+	//Calculate Program execution time
+	time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+
+	//Display time to the user.
+	printf("Execution Time: %fs", time_spent);
+
 	return 0;
 } // End Main Method
