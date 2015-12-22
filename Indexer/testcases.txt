@@ -1,0 +1,2333 @@
+
+--------------------------------------
+|  TEST CASE 1 TOO LITTLE ARGUMENTS  |
+--------------------------------------
+
+WARNING: Too few arguments! Correct execution could not be ensured!
+Try again:
+Sample: index <inverted-index file name> <directory or file name>
+Execution Time: 0.000015s
+
+
+------------------------------------
+|  TEST CASE 2 TOO MANY ARGUMENTS  |
+------------------------------------
+
+WARNING: Too many arguments! Correct execution could not be ensured!
+Try again:
+Sample: index <inverted-index file name> <directory or file name>
+Execution Time: 0.000016s
+
+
+------------------------------
+|  TEST CASE 3 NO ARGUMENTS  |
+------------------------------
+
+WARNING: No arguments! Correct execution count not be ensured!
+Try again:
+Sample: index <inverted-index file name> <directory or file name>
+Execution Time: 0.000021s
+
+-----------------------------
+|  TEST CASE 4 BINARY FILE  |
+-----------------------------
+
+dal220@Chronos:~/Desktop/dsad$ ./index "sample4.txt" "index"
+
+index is a binary file!
+Execution Time: 0.000078s
+
+--------------------------
+|  TEST CASE 5 FROM PDF  |
+--------------------------
+dal220@Chronos:~/Documents/pa3$ ./index "sample6.txt" "test"
+
+There are 2 files in the directory: test
+File 1: boo
+File 2: baa
+
+File 1: A dog name name Boo
+
+
+File 2: A cat name Baa
+
+Execution Time: 0.000239s
+
+
+{"list" : [
+	{"a" : [
+		{"boo" : 1}
+		{"baa" : 1}
+	]}
+	{"baa" : [
+		{"baa" : 1}
+	]}
+	{"boo" : [
+		{"boo" : 1}
+	]}
+	{"cat" : [
+		{"baa" : 1}
+	]}
+	{"dog" : [
+		{"boo" : 1}
+	]}
+	{"name" : [
+		{"boo" : 2}
+		{"baa" : 1}
+	]}
+]}
+
+
+(WARNING THESE ARE VERY LONG) saves JSON TO file PRINTED FOR EXAMPLE!!!~~~~ ....Sorry lol
+
+----------------------------------------
+|  TEST CASE 1 READING FROMA DIRECTORY |
+----------------------------------------
+There are 10 files in the directory: sample
+There is 1 Binary File!
+File 1: file (3rd copy).txt
+File 2: index (BINARY)
+File 3: file (7th copy).txt
+File 4: file (9th copy).txt
+File 5: file (copy).txt
+File 6: file (8th copy).txt
+File 7: file (4th copy).txt
+File 8: file (6th copy).txt
+File 9: file (another copy).txt
+File 10: file.txt
+File 11: file (5th copy).txt
+
+File 1: Hi I am file 3rd copy
+
+
+File 2: Hi I am file seven
+
+
+File 3: Hi I am file nine
+
+
+File 4: Hi I am file copy
+
+
+File 5: Hi I am file eight
+
+
+File 6: Hi I am file four
+
+
+File 7: Hi I am file six
+
+
+File 8: Hi I am another copy
+
+
+File 9: Hi I am file
+
+
+File 10: Hi I am file 5a
+
+
+File: 1
+----------------------------
+{"list" : [
+	{"am" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"copy" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"file" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"hi" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"i" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"rd" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+]}
+
+File: 2
+----------------------------
+{"list" : [
+	{"am" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+	]}
+	{"copy" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"file" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+	]}
+	{"hi" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+	]}
+	{"i" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+	]}
+	{"rd" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"seven" : [
+		{"file (7th copy).txt" : 1}
+	]}
+]}
+
+File: 3
+----------------------------
+{"list" : [
+	{"am" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+	]}
+	{"copy" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"file" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+	]}
+	{"hi" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+	]}
+	{"i" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+	]}
+	{"nine" : [
+		{"file (9th copy).txt" : 1}
+	]}
+	{"rd" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"seven" : [
+		{"file (7th copy).txt" : 1}
+	]}
+]}
+
+File: 4
+----------------------------
+{"list" : [
+	{"am" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+	]}
+	{"copy" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (copy).txt" : 1}
+	]}
+	{"file" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+	]}
+	{"hi" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+	]}
+	{"i" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+	]}
+	{"nine" : [
+		{"file (9th copy).txt" : 1}
+	]}
+	{"rd" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"seven" : [
+		{"file (7th copy).txt" : 1}
+	]}
+]}
+
+File: 5
+----------------------------
+{"list" : [
+	{"am" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+	]}
+	{"copy" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (copy).txt" : 1}
+	]}
+	{"eight" : [
+		{"file (8th copy).txt" : 1}
+	]}
+	{"file" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+	]}
+	{"hi" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+	]}
+	{"i" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+	]}
+	{"nine" : [
+		{"file (9th copy).txt" : 1}
+	]}
+	{"rd" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"seven" : [
+		{"file (7th copy).txt" : 1}
+	]}
+]}
+
+File: 6
+----------------------------
+{"list" : [
+	{"am" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+	]}
+	{"copy" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (copy).txt" : 1}
+	]}
+	{"eight" : [
+		{"file (8th copy).txt" : 1}
+	]}
+	{"file" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+	]}
+	{"four" : [
+		{"file (4th copy).txt" : 1}
+	]}
+	{"hi" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+	]}
+	{"i" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+	]}
+	{"nine" : [
+		{"file (9th copy).txt" : 1}
+	]}
+	{"rd" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"seven" : [
+		{"file (7th copy).txt" : 1}
+	]}
+]}
+
+File: 7
+----------------------------
+{"list" : [
+	{"am" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+	]}
+	{"copy" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (copy).txt" : 1}
+	]}
+	{"eight" : [
+		{"file (8th copy).txt" : 1}
+	]}
+	{"file" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+	]}
+	{"four" : [
+		{"file (4th copy).txt" : 1}
+	]}
+	{"hi" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+	]}
+	{"i" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+	]}
+	{"nine" : [
+		{"file (9th copy).txt" : 1}
+	]}
+	{"rd" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"seven" : [
+		{"file (7th copy).txt" : 1}
+	]}
+	{"six" : [
+		{"file (6th copy).txt" : 1}
+	]}
+]}
+
+File: 8
+----------------------------
+{"list" : [
+	{"am" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+		{"file (another copy).txt" : 1}
+	]}
+	{"another" : [
+		{"file (another copy).txt" : 1}
+	]}
+	{"copy" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (another copy).txt" : 1}
+	]}
+	{"eight" : [
+		{"file (8th copy).txt" : 1}
+	]}
+	{"file" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+	]}
+	{"four" : [
+		{"file (4th copy).txt" : 1}
+	]}
+	{"hi" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+		{"file (another copy).txt" : 1}
+	]}
+	{"i" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+		{"file (another copy).txt" : 1}
+	]}
+	{"nine" : [
+		{"file (9th copy).txt" : 1}
+	]}
+	{"rd" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"seven" : [
+		{"file (7th copy).txt" : 1}
+	]}
+	{"six" : [
+		{"file (6th copy).txt" : 1}
+	]}
+]}
+
+File: 9
+----------------------------
+{"list" : [
+	{"am" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+		{"file (another copy).txt" : 1}
+		{"file.txt" : 1}
+	]}
+	{"another" : [
+		{"file (another copy).txt" : 1}
+	]}
+	{"copy" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (another copy).txt" : 1}
+	]}
+	{"eight" : [
+		{"file (8th copy).txt" : 1}
+	]}
+	{"file" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+		{"file.txt" : 1}
+	]}
+	{"four" : [
+		{"file (4th copy).txt" : 1}
+	]}
+	{"hi" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+		{"file (another copy).txt" : 1}
+		{"file.txt" : 1}
+	]}
+	{"i" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+		{"file (another copy).txt" : 1}
+		{"file.txt" : 1}
+	]}
+	{"nine" : [
+		{"file (9th copy).txt" : 1}
+	]}
+	{"rd" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"seven" : [
+		{"file (7th copy).txt" : 1}
+	]}
+	{"six" : [
+		{"file (6th copy).txt" : 1}
+	]}
+]}
+
+File: 10
+----------------------------
+{"list" : [
+	{"a" : [
+		{"file (5th copy).txt" : 1}
+	]}
+	{"am" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+		{"file (another copy).txt" : 1}
+		{"file.txt" : 1}
+		{"file (5th copy).txt" : 1}
+	]}
+	{"another" : [
+		{"file (another copy).txt" : 1}
+	]}
+	{"copy" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (another copy).txt" : 1}
+	]}
+	{"eight" : [
+		{"file (8th copy).txt" : 1}
+	]}
+	{"file" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+		{"file.txt" : 1}
+		{"file (5th copy).txt" : 1}
+	]}
+	{"four" : [
+		{"file (4th copy).txt" : 1}
+	]}
+	{"hi" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+		{"file (another copy).txt" : 1}
+		{"file.txt" : 1}
+		{"file (5th copy).txt" : 1}
+	]}
+	{"i" : [
+		{"file (3rd copy).txt" : 1}
+		{"file (7th copy).txt" : 1}
+		{"file (9th copy).txt" : 1}
+		{"file (copy).txt" : 1}
+		{"file (8th copy).txt" : 1}
+		{"file (4th copy).txt" : 1}
+		{"file (6th copy).txt" : 1}
+		{"file (another copy).txt" : 1}
+		{"file.txt" : 1}
+		{"file (5th copy).txt" : 1}
+	]}
+	{"nine" : [
+		{"file (9th copy).txt" : 1}
+	]}
+	{"rd" : [
+		{"file (3rd copy).txt" : 1}
+	]}
+	{"seven" : [
+		{"file (7th copy).txt" : 1}
+	]}
+	{"six" : [
+		{"file (6th copy).txt" : 1}
+	]}
+]}
+Execution Time: 0.000622s
+
+
+
+
+--------------------------------------------
+|  READING FROM A SINGLE FILE (sample.txt) |
+--------------------------------------------
+
+{"list" : [
+	{"a" : [
+		{"sample.txt" : 34}
+	]}
+	{"abc" : [
+		{"sample.txt" : 6}
+	]}
+	{"able" : [
+		{"sample.txt" : 4}
+	]}
+	{"about" : [
+		{"sample.txt" : 3}
+	]}
+	{"absolutely" : [
+		{"sample.txt" : 1}
+	]}
+	{"act" : [
+		{"sample.txt" : 1}
+	]}
+	{"activates" : [
+		{"sample.txt" : 1}
+	]}
+	{"address" : [
+		{"sample.txt" : 1}
+	]}
+	{"administration" : [
+		{"sample.txt" : 2}
+	]}
+	{"advocates" : [
+		{"sample.txt" : 1}
+	]}
+	{"affiliate" : [
+		{"sample.txt" : 1}
+	]}
+	{"affirm" : [
+		{"sample.txt" : 3}
+	]}
+	{"after" : [
+		{"sample.txt" : 1}
+	]}
+	{"again" : [
+		{"sample.txt" : 1}
+	]}
+	{"against" : [
+		{"sample.txt" : 1}
+	]}
+	{"ago" : [
+		{"sample.txt" : 1}
+	]}
+	{"ahead" : [
+		{"sample.txt" : 2}
+	]}
+	{"aid" : [
+		{"sample.txt" : 1}
+	]}
+	{"aired" : [
+		{"sample.txt" : 1}
+	]}
+	{"airmen" : [
+		{"sample.txt" : 1}
+	]}
+	{"akron" : [
+		{"sample.txt" : 1}
+	]}
+	{"allowing" : [
+		{"sample.txt" : 2}
+	]}
+	{"already" : [
+		{"sample.txt" : 2}
+	]}
+	{"also" : [
+		{"sample.txt" : 1}
+	]}
+	{"amendment" : [
+		{"sample.txt" : 2}
+	]}
+	{"amendments" : [
+		{"sample.txt" : 1}
+	]}
+	{"america" : [
+		{"sample.txt" : 1}
+	]}
+	{"americans" : [
+		{"sample.txt" : 2}
+	]}
+	{"among" : [
+		{"sample.txt" : 2}
+	]}
+	{"an" : [
+		{"sample.txt" : 5}
+	]}
+	{"and" : [
+		{"sample.txt" : 25}
+	]}
+	{"announced" : [
+		{"sample.txt" : 2}
+	]}
+	{"announcement" : [
+		{"sample.txt" : 2}
+	]}
+	{"another" : [
+		{"sample.txt" : 1}
+	]}
+	{"appeal" : [
+		{"sample.txt" : 1}
+	]}
+	{"appeals" : [
+		{"sample.txt" : 2}
+	]}
+	{"appear" : [
+		{"sample.txt" : 1}
+	]}
+	{"appearance" : [
+		{"sample.txt" : 1}
+	]}
+	{"appearing" : [
+		{"sample.txt" : 1}
+	]}
+	{"appropriate" : [
+		{"sample.txt" : 1}
+	]}
+	{"approved" : [
+		{"sample.txt" : 1}
+	]}
+	{"are" : [
+		{"sample.txt" : 9}
+	]}
+	{"arguing" : [
+		{"sample.txt" : 1}
+	]}
+	{"arguments" : [
+		{"sample.txt" : 1}
+	]}
+	{"arne" : [
+		{"sample.txt" : 1}
+	]}
+	{"as" : [
+		{"sample.txt" : 8}
+	]}
+	{"ask" : [
+		{"sample.txt" : 2}
+	]}
+	{"asked" : [
+		{"sample.txt" : 1}
+	]}
+	{"at" : [
+		{"sample.txt" : 5}
+	]}
+	{"backed" : [
+		{"sample.txt" : 1}
+	]}
+	{"ban" : [
+		{"sample.txt" : 1}
+	]}
+	{"barack" : [
+		{"sample.txt" : 1}
+	]}
+	{"barney" : [
+		{"sample.txt" : 1}
+	]}
+	{"base" : [
+		{"sample.txt" : 1}
+	]}
+	{"be" : [
+		{"sample.txt" : 10}
+	]}
+	{"because" : [
+		{"sample.txt" : 2}
+	]}
+	{"before" : [
+		{"sample.txt" : 2}
+	]}
+	{"beginning" : [
+		{"sample.txt" : 1}
+	]}
+	{"behalf" : [
+		{"sample.txt" : 1}
+	]}
+	{"being" : [
+		{"sample.txt" : 1}
+	]}
+	{"beliefs" : [
+		{"sample.txt" : 1}
+	]}
+	{"believe" : [
+		{"sample.txt" : 3}
+	]}
+	{"believed" : [
+		{"sample.txt" : 1}
+	]}
+	{"benefits" : [
+		{"sample.txt" : 2}
+	]}
+	{"between" : [
+		{"sample.txt" : 3}
+	]}
+	{"biden" : [
+		{"sample.txt" : 1}
+	]}
+	{"bill" : [
+		{"sample.txt" : 4}
+	]}
+	{"block" : [
+		{"sample.txt" : 1}
+	]}
+	{"boehner" : [
+		{"sample.txt" : 1}
+	]}
+	{"booth" : [
+		{"sample.txt" : 1}
+	]}
+	{"boston" : [
+		{"sample.txt" : 1}
+	]}
+	{"both" : [
+		{"sample.txt" : 2}
+	]}
+	{"burnett" : [
+		{"sample.txt" : 1}
+	]}
+	{"but" : [
+		{"sample.txt" : 7}
+	]}
+	{"by" : [
+		{"sample.txt" : 10}
+	]}
+	{"california" : [
+		{"sample.txt" : 1}
+	]}
+	{"called" : [
+		{"sample.txt" : 1}
+	]}
+	{"campaign" : [
+		{"sample.txt" : 3}
+	]}
+	{"campuses" : [
+		{"sample.txt" : 1}
+	]}
+	{"can" : [
+		{"sample.txt" : 2}
+	]}
+	{"carolina" : [
+		{"sample.txt" : 4}
+	]}
+	{"catholic" : [
+		{"sample.txt" : 1}
+	]}
+	{"celebrated" : [
+		{"sample.txt" : 1}
+	]}
+	{"certain" : [
+		{"sample.txt" : 2}
+	]}
+	{"chad" : [
+		{"sample.txt" : 1}
+	]}
+	{"challenges" : [
+		{"sample.txt" : 2}
+	]}
+	{"change" : [
+		{"sample.txt" : 2}
+	]}
+	{"child" : [
+		{"sample.txt" : 1}
+	]}
+	{"christine" : [
+		{"sample.txt" : 1}
+	]}
+	{"circuit" : [
+		{"sample.txt" : 1}
+	]}
+	{"civil" : [
+		{"sample.txt" : 2}
+	]}
+	{"clear" : [
+		{"sample.txt" : 2}
+	]}
+	{"close" : [
+		{"sample.txt" : 1}
+	]}
+	{"closer" : [
+		{"sample.txt" : 1}
+	]}
+	{"cnn" : [
+		{"sample.txt" : 5}
+	]}
+	{"college" : [
+		{"sample.txt" : 2}
+	]}
+	{"columbia" : [
+		{"sample.txt" : 1}
+	]}
+	{"come" : [
+		{"sample.txt" : 1}
+	]}
+	{"comes" : [
+		{"sample.txt" : 1}
+	]}
+	{"comfortable" : [
+		{"sample.txt" : 1}
+	]}
+	{"coming" : [
+		{"sample.txt" : 1}
+	]}
+	{"comments" : [
+		{"sample.txt" : 2}
+	]}
+	{"commit" : [
+		{"sample.txt" : 2}
+	]}
+	{"committed" : [
+		{"sample.txt" : 1}
+	]}
+	{"concept" : [
+		{"sample.txt" : 1}
+	]}
+	{"concluded" : [
+		{"sample.txt" : 2}
+	]}
+	{"congressman" : [
+		{"sample.txt" : 1}
+	]}
+	{"connecticut" : [
+		{"sample.txt" : 1}
+	]}
+	{"conservatives" : [
+		{"sample.txt" : 1}
+	]}
+	{"constitutional" : [
+		{"sample.txt" : 4}
+	]}
+	{"constitutionality" : [
+		{"sample.txt" : 1}
+	]}
+	{"constrained" : [
+		{"sample.txt" : 1}
+	]}
+	{"could" : [
+		{"sample.txt" : 2}
+	]}
+	{"council" : [
+		{"sample.txt" : 1}
+	]}
+	{"country" : [
+		{"sample.txt" : 1}
+	]}
+	{"couple" : [
+		{"sample.txt" : 1}
+	]}
+	{"couples" : [
+		{"sample.txt" : 7}
+	]}
+	{"court" : [
+		{"sample.txt" : 4}
+	]}
+	{"criticized" : [
+		{"sample.txt" : 1}
+	]}
+	{"current" : [
+		{"sample.txt" : 1}
+	]}
+	{"cuts" : [
+		{"sample.txt" : 1}
+	]}
+	{"daughters" : [
+		{"sample.txt" : 1}
+	]}
+	{"dawn" : [
+		{"sample.txt" : 1}
+	]}
+	{"day" : [
+		{"sample.txt" : 1}
+	]}
+	{"decide" : [
+		{"sample.txt" : 2}
+	]}
+	{"deciding" : [
+		{"sample.txt" : 1}
+	]}
+	{"decision" : [
+		{"sample.txt" : 2}
+	]}
+	{"defend" : [
+		{"sample.txt" : 1}
+	]}
+	{"defended" : [
+		{"sample.txt" : 1}
+	]}
+	{"defense" : [
+		{"sample.txt" : 1}
+	]}
+	{"defines" : [
+		{"sample.txt" : 1}
+	]}
+	{"definitions" : [
+		{"sample.txt" : 1}
+	]}
+	{"democrat" : [
+		{"sample.txt" : 1}
+	]}
+	{"democratic" : [
+		{"sample.txt" : 2}
+	]}
+	{"denver" : [
+		{"sample.txt" : 1}
+	]}
+	{"deny" : [
+		{"sample.txt" : 1}
+	]}
+	{"department" : [
+		{"sample.txt" : 1}
+	]}
+	{"described" : [
+		{"sample.txt" : 1}
+	]}
+	{"development" : [
+		{"sample.txt" : 2}
+	]}
+	{"diane" : [
+		{"sample.txt" : 1}
+	]}
+	{"differences" : [
+		{"sample.txt" : 1}
+	]}
+	{"differently" : [
+		{"sample.txt" : 1}
+	]}
+	{"disappointed" : [
+		{"sample.txt" : 1}
+	]}
+	{"discriminatory" : [
+		{"sample.txt" : 1}
+	]}
+	{"district" : [
+		{"sample.txt" : 1}
+	]}
+	{"do" : [
+		{"sample.txt" : 3}
+	]}
+	{"doesn" : [
+		{"sample.txt" : 1}
+	]}
+	{"doma" : [
+		{"sample.txt" : 2}
+	]}
+	{"domestic" : [
+		{"sample.txt" : 1}
+	]}
+	{"don" : [
+		{"sample.txt" : 4}
+	]}
+	{"done" : [
+		{"sample.txt" : 1}
+	]}
+	{"donohue" : [
+		{"sample.txt" : 1}
+	]}
+	{"down" : [
+		{"sample.txt" : 1}
+	]}
+	{"duncan" : [
+		{"sample.txt" : 2}
+	]}
+	{"during" : [
+		{"sample.txt" : 2}
+	]}
+	{"earlier" : [
+		{"sample.txt" : 2}
+	]}
+	{"economy" : [
+		{"sample.txt" : 1}
+	]}
+	{"education" : [
+		{"sample.txt" : 1}
+	]}
+	{"election" : [
+		{"sample.txt" : 3}
+	]}
+	{"enforcement" : [
+		{"sample.txt" : 1}
+	]}
+	{"equal" : [
+		{"sample.txt" : 1}
+	]}
+	{"equality" : [
+		{"sample.txt" : 2}
+	]}
+	{"erin" : [
+		{"sample.txt" : 1}
+	]}
+	{"even" : [
+		{"sample.txt" : 2}
+	]}
+	{"evening" : [
+		{"sample.txt" : 1}
+	]}
+	{"evenly" : [
+		{"sample.txt" : 1}
+	]}
+	{"evolving" : [
+		{"sample.txt" : 1}
+	]}
+	{"excerpts" : [
+		{"sample.txt" : 1}
+	]}
+	{"expected" : [
+		{"sample.txt" : 1}
+	]}
+	{"expert" : [
+		{"sample.txt" : 1}
+	]}
+	{"facing" : [
+		{"sample.txt" : 1}
+	]}
+	{"fact" : [
+		{"sample.txt" : 1}
+	]}
+	{"family" : [
+		{"sample.txt" : 1}
+	]}
+	{"father" : [
+		{"sample.txt" : 1}
+	]}
+	{"favor" : [
+		{"sample.txt" : 2}
+	]}
+	{"february" : [
+		{"sample.txt" : 1}
+	]}
+	{"federal" : [
+		{"sample.txt" : 5}
+	]}
+	{"feel" : [
+		{"sample.txt" : 1}
+	]}
+	{"feels" : [
+		{"sample.txt" : 2}
+	]}
+	{"fighting" : [
+		{"sample.txt" : 1}
+	]}
+	{"figures" : [
+		{"sample.txt" : 1}
+	]}
+	{"first" : [
+		{"sample.txt" : 2}
+	]}
+	{"foe" : [
+		{"sample.txt" : 1}
+	]}
+	{"followed" : [
+		{"sample.txt" : 1}
+	]}
+	{"for" : [
+		{"sample.txt" : 10}
+	]}
+	{"foreign" : [
+		{"sample.txt" : 1}
+	]}
+	{"fort" : [
+		{"sample.txt" : 1}
+	]}
+	{"frank" : [
+		{"sample.txt" : 1}
+	]}
+	{"frankly" : [
+		{"sample.txt" : 1}
+	]}
+	{"friends" : [
+		{"sample.txt" : 2}
+	]}
+	{"from" : [
+		{"sample.txt" : 1}
+	]}
+	{"future" : [
+		{"sample.txt" : 1}
+	]}
+	{"gallup" : [
+		{"sample.txt" : 1}
+	]}
+	{"gay" : [
+		{"sample.txt" : 3}
+	]}
+	{"gays" : [
+		{"sample.txt" : 2}
+	]}
+	{"gender" : [
+		{"sample.txt" : 2}
+	]}
+	{"generational" : [
+		{"sample.txt" : 1}
+	]}
+	{"generations" : [
+		{"sample.txt" : 1}
+	]}
+	{"get" : [
+		{"sample.txt" : 2}
+	]}
+	{"go" : [
+		{"sample.txt" : 3}
+	]}
+	{"gone" : [
+		{"sample.txt" : 1}
+	]}
+	{"good" : [
+		{"sample.txt" : 1}
+	]}
+	{"gov" : [
+		{"sample.txt" : 2}
+	]}
+	{"government" : [
+		{"sample.txt" : 1}
+	]}
+	{"green" : [
+		{"sample.txt" : 1}
+	]}
+	{"gregoire" : [
+		{"sample.txt" : 1}
+	]}
+	{"griffin" : [
+		{"sample.txt" : 2}
+	]}
+	{"had" : [
+		{"sample.txt" : 3}
+	]}
+	{"hampshire" : [
+		{"sample.txt" : 1}
+	]}
+	{"handed" : [
+		{"sample.txt" : 1}
+	]}
+	{"has" : [
+		{"sample.txt" : 1}
+	]}
+	{"have" : [
+		{"sample.txt" : 6}
+	]}
+	{"he" : [
+		{"sample.txt" : 10}
+	]}
+	{"headlines" : [
+		{"sample.txt" : 1}
+	]}
+	{"health" : [
+		{"sample.txt" : 1}
+	]}
+	{"hear" : [
+		{"sample.txt" : 1}
+	]}
+	{"heard" : [
+		{"sample.txt" : 1}
+	]}
+	{"hesitated" : [
+		{"sample.txt" : 1}
+	]}
+	{"heterosexual" : [
+		{"sample.txt" : 1}
+	]}
+	{"his" : [
+		{"sample.txt" : 6}
+	]}
+	{"homosexuals" : [
+		{"sample.txt" : 1}
+	]}
+	{"hospital" : [
+		{"sample.txt" : 1}
+	]}
+	{"house" : [
+		{"sample.txt" : 1}
+	]}
+	{"how" : [
+		{"sample.txt" : 1}
+	]}
+	{"human" : [
+		{"sample.txt" : 1}
+	]}
+	{"i" : [
+		{"sample.txt" : 16}
+	]}
+	{"identical" : [
+		{"sample.txt" : 1}
+	]}
+	{"if" : [
+		{"sample.txt" : 2}
+	]}
+	{"immediately" : [
+		{"sample.txt" : 1}
+	]}
+	{"implement" : [
+		{"sample.txt" : 1}
+	]}
+	{"important" : [
+		{"sample.txt" : 3}
+	]}
+	{"in" : [
+		{"sample.txt" : 28}
+	]}
+	{"indicated" : [
+		{"sample.txt" : 3}
+	]}
+	{"individuals" : [
+		{"sample.txt" : 1}
+	]}
+	{"intensity" : [
+		{"sample.txt" : 1}
+	]}
+	{"interview" : [
+		{"sample.txt" : 3}
+	]}
+	{"into" : [
+		{"sample.txt" : 1}
+	]}
+	{"involved" : [
+		{"sample.txt" : 1}
+	]}
+	{"iowa" : [
+		{"sample.txt" : 1}
+	]}
+	{"is" : [
+		{"sample.txt" : 12}
+	]}
+	{"issue" : [
+		{"sample.txt" : 9}
+	]}
+	{"issues" : [
+		{"sample.txt" : 1}
+	]}
+	{"it" : [
+		{"sample.txt" : 12}
+	]}
+	{"its" : [
+		{"sample.txt" : 1}
+	]}
+	{"january" : [
+		{"sample.txt" : 1}
+	]}
+	{"joe" : [
+		{"sample.txt" : 2}
+	]}
+	{"john" : [
+		{"sample.txt" : 2}
+	]}
+	{"judge" : [
+		{"sample.txt" : 1}
+	]}
+	{"june" : [
+		{"sample.txt" : 1}
+	]}
+	{"just" : [
+		{"sample.txt" : 2}
+	]}
+	{"justice" : [
+		{"sample.txt" : 1}
+	]}
+	{"justices" : [
+		{"sample.txt" : 1}
+	]}
+	{"kdvr" : [
+		{"sample.txt" : 1}
+	]}
+	{"key" : [
+		{"sample.txt" : 3}
+	]}
+	{"kind" : [
+		{"sample.txt" : 1}
+	]}
+	{"know" : [
+		{"sample.txt" : 3}
+	]}
+	{"lady" : [
+		{"sample.txt" : 1}
+	]}
+	{"last" : [
+		{"sample.txt" : 3}
+	]}
+	{"late" : [
+		{"sample.txt" : 1}
+	]}
+	{"later" : [
+		{"sample.txt" : 2}
+	]}
+	{"lauded" : [
+		{"sample.txt" : 1}
+	]}
+	{"law" : [
+		{"sample.txt" : 7}
+	]}
+	{"lawsuit" : [
+		{"sample.txt" : 1}
+	]}
+	{"leading" : [
+		{"sample.txt" : 1}
+	]}
+	{"league" : [
+		{"sample.txt" : 1}
+	]}
+	{"led" : [
+		{"sample.txt" : 1}
+	]}
+	{"legal" : [
+		{"sample.txt" : 4}
+	]}
+	{"legalize" : [
+		{"sample.txt" : 1}
+	]}
+	{"legally" : [
+		{"sample.txt" : 1}
+	]}
+	{"lesbians" : [
+		{"sample.txt" : 2}
+	]}
+	{"licenses" : [
+		{"sample.txt" : 1}
+	]}
+	{"like" : [
+		{"sample.txt" : 1}
+	]}
+	{"long" : [
+		{"sample.txt" : 1}
+	]}
+	{"lot" : [
+		{"sample.txt" : 1}
+	]}
+	{"lupton" : [
+		{"sample.txt" : 1}
+	]}
+	{"made" : [
+		{"sample.txt" : 1}
+	]}
+	{"maine" : [
+		{"sample.txt" : 1}
+	]}
+	{"make" : [
+		{"sample.txt" : 2}
+	]}
+	{"malia" : [
+		{"sample.txt" : 1}
+	]}
+	{"malley" : [
+		{"sample.txt" : 1}
+	]}
+	{"man" : [
+		{"sample.txt" : 3}
+	]}
+	{"many" : [
+		{"sample.txt" : 1}
+	]}
+	{"march" : [
+		{"sample.txt" : 1}
+	]}
+	{"marines" : [
+		{"sample.txt" : 1}
+	]}
+	{"marriage" : [
+		{"sample.txt" : 23}
+	]}
+	{"marriages" : [
+		{"sample.txt" : 4}
+	]}
+	{"married" : [
+		{"sample.txt" : 2}
+	]}
+	{"marry" : [
+		{"sample.txt" : 1}
+	]}
+	{"marrying" : [
+		{"sample.txt" : 1}
+	]}
+	{"martin" : [
+		{"sample.txt" : 1}
+	]}
+	{"maryland" : [
+		{"sample.txt" : 1}
+	]}
+	{"massachusetts" : [
+		{"sample.txt" : 3}
+	]}
+	{"may" : [
+		{"sample.txt" : 1}
+	]}
+	{"me" : [
+		{"sample.txt" : 4}
+	]}
+	{"measure" : [
+		{"sample.txt" : 2}
+	]}
+	{"michelle" : [
+		{"sample.txt" : 1}
+	]}
+	{"might" : [
+		{"sample.txt" : 1}
+	]}
+	{"military" : [
+		{"sample.txt" : 1}
+	]}
+	{"minnesota" : [
+		{"sample.txt" : 1}
+	]}
+	{"missing" : [
+		{"sample.txt" : 1}
+	]}
+	{"mitt" : [
+		{"sample.txt" : 3}
+	]}
+	{"monday" : [
+		{"sample.txt" : 1}
+	]}
+	{"month" : [
+		{"sample.txt" : 1}
+	]}
+	{"months" : [
+		{"sample.txt" : 1}
+	]}
+	{"morgan" : [
+		{"sample.txt" : 2}
+	]}
+	{"morning" : [
+		{"sample.txt" : 2}
+	]}
+	{"most" : [
+		{"sample.txt" : 1}
+	]}
+	{"mother" : [
+		{"sample.txt" : 1}
+	]}
+	{"motivation" : [
+		{"sample.txt" : 1}
+	]}
+	{"move" : [
+		{"sample.txt" : 1}
+	]}
+	{"msnbc" : [
+		{"sample.txt" : 1}
+	]}
+	{"my" : [
+		{"sample.txt" : 2}
+	]}
+	{"name" : [
+		{"sample.txt" : 1}
+	]}
+	{"nbc" : [
+		{"sample.txt" : 1}
+	]}
+	{"needed" : [
+		{"sample.txt" : 1}
+	]}
+	{"needs" : [
+		{"sample.txt" : 2}
+	]}
+	{"never" : [
+		{"sample.txt" : 1}
+	]}
+	{"new" : [
+		{"sample.txt" : 3}
+	]}
+	{"news" : [
+		{"sample.txt" : 4}
+	]}
+	{"next" : [
+		{"sample.txt" : 1}
+	]}
+	{"ninth" : [
+		{"sample.txt" : 1}
+	]}
+	{"no" : [
+		{"sample.txt" : 1}
+	]}
+	{"nominee" : [
+		{"sample.txt" : 1}
+	]}
+	{"north" : [
+		{"sample.txt" : 4}
+	]}
+	{"not" : [
+		{"sample.txt" : 7}
+	]}
+	{"now" : [
+		{"sample.txt" : 1}
+	]}
+	{"o" : [
+		{"sample.txt" : 1}
+	]}
+	{"obama" : [
+		{"sample.txt" : 18}
+	]}
+	{"observers" : [
+		{"sample.txt" : 1}
+	]}
+	{"odds" : [
+		{"sample.txt" : 1}
+	]}
+	{"of" : [
+		{"sample.txt" : 20}
+	]}
+	{"off" : [
+		{"sample.txt" : 1}
+	]}
+	{"officially" : [
+		{"sample.txt" : 1}
+	]}
+	{"often" : [
+		{"sample.txt" : 1}
+	]}
+	{"ohio" : [
+		{"sample.txt" : 1}
+	]}
+	{"oklahoma" : [
+		{"sample.txt" : 1}
+	]}
+	{"on" : [
+		{"sample.txt" : 24}
+	]}
+	{"once" : [
+		{"sample.txt" : 1}
+	]}
+	{"one" : [
+		{"sample.txt" : 4}
+	]}
+	{"only" : [
+		{"sample.txt" : 2}
+	]}
+	{"openly" : [
+		{"sample.txt" : 1}
+	]}
+	{"opinions" : [
+		{"sample.txt" : 1}
+	]}
+	{"opponents" : [
+		{"sample.txt" : 1}
+	]}
+	{"opposed" : [
+		{"sample.txt" : 1}
+	]}
+	{"opposes" : [
+		{"sample.txt" : 1}
+	]}
+	{"opposition" : [
+		{"sample.txt" : 1}
+	]}
+	{"or" : [
+		{"sample.txt" : 5}
+	]}
+	{"orc" : [
+		{"sample.txt" : 1}
+	]}
+	{"orientation" : [
+		{"sample.txt" : 1}
+	]}
+	{"other" : [
+		{"sample.txt" : 2}
+	]}
+	{"others" : [
+		{"sample.txt" : 1}
+	]}
+	{"out" : [
+		{"sample.txt" : 2}
+	]}
+	{"outfront" : [
+		{"sample.txt" : 1}
+	]}
+	{"over" : [
+		{"sample.txt" : 3}
+	]}
+	{"own" : [
+		{"sample.txt" : 1}
+	]}
+	{"parents" : [
+		{"sample.txt" : 2}
+	]}
+	{"part" : [
+		{"sample.txt" : 2}
+	]}
+	{"participate" : [
+		{"sample.txt" : 1}
+	]}
+	{"partnership" : [
+		{"sample.txt" : 1}
+	]}
+	{"pension" : [
+		{"sample.txt" : 1}
+	]}
+	{"pentagon" : [
+		{"sample.txt" : 1}
+	]}
+	{"people" : [
+		{"sample.txt" : 1}
+	]}
+	{"perkins" : [
+		{"sample.txt" : 1}
+	]}
+	{"permits" : [
+		{"sample.txt" : 1}
+	]}
+	{"personally" : [
+		{"sample.txt" : 2}
+	]}
+	{"personnel" : [
+		{"sample.txt" : 1}
+	]}
+	{"perspective" : [
+		{"sample.txt" : 1}
+	]}
+	{"piece" : [
+		{"sample.txt" : 1}
+	]}
+	{"piers" : [
+		{"sample.txt" : 1}
+	]}
+	{"play" : [
+		{"sample.txt" : 1}
+	]}
+	{"played" : [
+		{"sample.txt" : 1}
+	]}
+	{"pledged" : [
+		{"sample.txt" : 1}
+	]}
+	{"point" : [
+		{"sample.txt" : 3}
+	]}
+	{"policies" : [
+		{"sample.txt" : 2}
+	]}
+	{"policy" : [
+		{"sample.txt" : 2}
+	]}
+	{"political" : [
+		{"sample.txt" : 1}
+	]}
+	{"politics" : [
+		{"sample.txt" : 1}
+	]}
+	{"poll" : [
+		{"sample.txt" : 2}
+	]}
+	{"powerful" : [
+		{"sample.txt" : 1}
+	]}
+	{"president" : [
+		{"sample.txt" : 14}
+	]}
+	{"presidential" : [
+		{"sample.txt" : 1}
+	]}
+	{"presumptive" : [
+		{"sample.txt" : 1}
+	]}
+	{"prohibited" : [
+		{"sample.txt" : 1}
+	]}
+	{"prompting" : [
+		{"sample.txt" : 1}
+	]}
+	{"prompts" : [
+		{"sample.txt" : 1}
+	]}
+	{"proposition" : [
+		{"sample.txt" : 1}
+	]}
+	{"protection" : [
+		{"sample.txt" : 1}
+	]}
+	{"provokes" : [
+		{"sample.txt" : 1}
+	]}
+	{"purposes" : [
+		{"sample.txt" : 1}
+	]}
+	{"pushed" : [
+		{"sample.txt" : 1}
+	]}
+	{"put" : [
+		{"sample.txt" : 1}
+	]}
+	{"r" : [
+		{"sample.txt" : 1}
+	]}
+	{"raising" : [
+		{"sample.txt" : 1}
+	]}
+	{"reach" : [
+		{"sample.txt" : 1}
+	]}
+	{"reaction" : [
+		{"sample.txt" : 1}
+	]}
+	{"recent" : [
+		{"sample.txt" : 1}
+	]}
+	{"recognize" : [
+		{"sample.txt" : 1}
+	]}
+	{"recognized" : [
+		{"sample.txt" : 1}
+	]}
+	{"referendum" : [
+		{"sample.txt" : 1}
+	]}
+	{"referred" : [
+		{"sample.txt" : 1}
+	]}
+	{"refused" : [
+		{"sample.txt" : 1}
+	]}
+	{"reiterated" : [
+		{"sample.txt" : 1}
+	]}
+	{"relationship" : [
+		{"sample.txt" : 1}
+	]}
+	{"released" : [
+		{"sample.txt" : 1}
+	]}
+	{"religion" : [
+		{"sample.txt" : 1}
+	]}
+	{"religious" : [
+		{"sample.txt" : 1}
+	]}
+	{"replied" : [
+		{"sample.txt" : 1}
+	]}
+	{"reported" : [
+		{"sample.txt" : 1}
+	]}
+	{"republican" : [
+		{"sample.txt" : 3}
+	]}
+	{"republicans" : [
+		{"sample.txt" : 2}
+	]}
+	{"research" : [
+		{"sample.txt" : 1}
+	]}
+	{"residents" : [
+		{"sample.txt" : 1}
+	]}
+	{"rights" : [
+		{"sample.txt" : 3}
+	]}
+	{"roberts" : [
+		{"sample.txt" : 1}
+	]}
+	{"robin" : [
+		{"sample.txt" : 1}
+	]}
+	{"romney" : [
+		{"sample.txt" : 7}
+	]}
+	{"room" : [
+		{"sample.txt" : 1}
+	]}
+	{"s" : [
+		{"sample.txt" : 19}
+	]}
+	{"said" : [
+		{"sample.txt" : 18}
+	]}
+	{"sailors" : [
+		{"sample.txt" : 1}
+	]}
+	{"same" : [
+		{"sample.txt" : 25}
+	]}
+	{"sasha" : [
+		{"sample.txt" : 1}
+	]}
+	{"sawyer" : [
+		{"sample.txt" : 1}
+	]}
+	{"saying" : [
+		{"sample.txt" : 1}
+	]}
+	{"secretary" : [
+		{"sample.txt" : 1}
+	]}
+	{"seek" : [
+		{"sample.txt" : 1}
+	]}
+	{"seems" : [
+		{"sample.txt" : 1}
+	]}
+	{"sense" : [
+		{"sample.txt" : 1}
+	]}
+	{"sensitive" : [
+		{"sample.txt" : 1}
+	]}
+	{"service" : [
+		{"sample.txt" : 1}
+	]}
+	{"serving" : [
+		{"sample.txt" : 1}
+	]}
+	{"sex" : [
+		{"sample.txt" : 21}
+	]}
+	{"sexual" : [
+		{"sample.txt" : 1}
+	]}
+	{"she" : [
+		{"sample.txt" : 3}
+	]}
+	{"shifted" : [
+		{"sample.txt" : 1}
+	]}
+	{"should" : [
+		{"sample.txt" : 4}
+	]}
+	{"signed" : [
+		{"sample.txt" : 2}
+	]}
+	{"similar" : [
+		{"sample.txt" : 1}
+	]}
+	{"sitting" : [
+		{"sample.txt" : 1}
+	]}
+	{"situation" : [
+		{"sample.txt" : 1}
+	]}
+	{"social" : [
+		{"sample.txt" : 1}
+	]}
+	{"soldiers" : [
+		{"sample.txt" : 1}
+	]}
+	{"some" : [
+		{"sample.txt" : 1}
+	]}
+	{"somehow" : [
+		{"sample.txt" : 1}
+	]}
+	{"something" : [
+		{"sample.txt" : 2}
+	]}
+	{"sometimes" : [
+		{"sample.txt" : 1}
+	]}
+	{"sought" : [
+		{"sample.txt" : 1}
+	]}
+	{"speaker" : [
+		{"sample.txt" : 1}
+	]}
+	{"split" : [
+		{"sample.txt" : 1}
+	]}
+	{"spoke" : [
+		{"sample.txt" : 1}
+	]}
+	{"spokesman" : [
+		{"sample.txt" : 1}
+	]}
+	{"squarely" : [
+		{"sample.txt" : 1}
+	]}
+	{"stakes" : [
+		{"sample.txt" : 1}
+	]}
+	{"stance" : [
+		{"sample.txt" : 2}
+	]}
+	{"state" : [
+		{"sample.txt" : 5}
+	]}
+	{"statement" : [
+		{"sample.txt" : 1}
+	]}
+	{"states" : [
+		{"sample.txt" : 3}
+	]}
+	{"stepped" : [
+		{"sample.txt" : 1}
+	]}
+	{"stopped" : [
+		{"sample.txt" : 1}
+	]}
+	{"struck" : [
+		{"sample.txt" : 1}
+	]}
+	{"such" : [
+		{"sample.txt" : 3}
+	]}
+	{"sufficient" : [
+		{"sample.txt" : 1}
+	]}
+	{"sunday" : [
+		{"sample.txt" : 1}
+	]}
+	{"supporters" : [
+		{"sample.txt" : 1}
+	]}
+	{"supports" : [
+		{"sample.txt" : 3}
+	]}
+	{"supreme" : [
+		{"sample.txt" : 1}
+	]}
+	{"t" : [
+		{"sample.txt" : 6}
+	]}
+	{"taken" : [
+		{"sample.txt" : 1}
+	]}
+	{"talk" : [
+		{"sample.txt" : 1}
+	]}
+	{"talked" : [
+		{"sample.txt" : 1}
+	]}
+	{"talking" : [
+		{"sample.txt" : 1}
+	]}
+	{"tax" : [
+		{"sample.txt" : 1}
+	]}
+	{"tell" : [
+		{"sample.txt" : 2}
+	]}
+	{"terrible" : [
+		{"sample.txt" : 1}
+	]}
+	{"than" : [
+		{"sample.txt" : 1}
+	]}
+	{"that" : [
+		{"sample.txt" : 32}
+	]}
+	{"the" : [
+		{"sample.txt" : 62}
+	]}
+	{"their" : [
+		{"sample.txt" : 2}
+	]}
+	{"them" : [
+		{"sample.txt" : 2}
+	]}
+	{"themselves" : [
+		{"sample.txt" : 2}
+	]}
+	{"there" : [
+		{"sample.txt" : 2}
+	]}
+	{"they" : [
+		{"sample.txt" : 4}
+	]}
+	{"thing" : [
+		{"sample.txt" : 1}
+	]}
+	{"think" : [
+		{"sample.txt" : 5}
+	]}
+	{"thinking" : [
+		{"sample.txt" : 1}
+	]}
+	{"this" : [
+		{"sample.txt" : 3}
+	]}
+	{"those" : [
+		{"sample.txt" : 1}
+	]}
+	{"thought" : [
+		{"sample.txt" : 2}
+	]}
+	{"thursday" : [
+		{"sample.txt" : 1}
+	]}
+	{"tied" : [
+		{"sample.txt" : 1}
+	]}
+	{"to" : [
+		{"sample.txt" : 35}
+	]}
+	{"today" : [
+		{"sample.txt" : 1}
+	]}
+	{"told" : [
+		{"sample.txt" : 4}
+	]}
+	{"tonight" : [
+		{"sample.txt" : 1}
+	]}
+	{"tony" : [
+		{"sample.txt" : 1}
+	]}
+	{"towards" : [
+		{"sample.txt" : 1}
+	]}
+	{"tracks" : [
+		{"sample.txt" : 1}
+	]}
+	{"traditional" : [
+		{"sample.txt" : 1}
+	]}
+	{"traditions" : [
+		{"sample.txt" : 1}
+	]}
+	{"treated" : [
+		{"sample.txt" : 1}
+	]}
+	{"tuesday" : [
+		{"sample.txt" : 3}
+	]}
+	{"two" : [
+		{"sample.txt" : 1}
+	]}
+	{"u" : [
+		{"sample.txt" : 3}
+	]}
+	{"unconstitutional" : [
+		{"sample.txt" : 1}
+	]}
+	{"union" : [
+		{"sample.txt" : 1}
+	]}
+	{"unions" : [
+		{"sample.txt" : 3}
+	]}
+	{"university" : [
+		{"sample.txt" : 1}
+	]}
+	{"unlikely" : [
+		{"sample.txt" : 1}
+	]}
+	{"valid" : [
+		{"sample.txt" : 1}
+	]}
+	{"ve" : [
+		{"sample.txt" : 3}
+	]}
+	{"vermont" : [
+		{"sample.txt" : 1}
+	]}
+	{"very" : [
+		{"sample.txt" : 2}
+	]}
+	{"vice" : [
+		{"sample.txt" : 1}
+	]}
+	{"view" : [
+		{"sample.txt" : 1}
+	]}
+	{"views" : [
+		{"sample.txt" : 1}
+	]}
+	{"violation" : [
+		{"sample.txt" : 1}
+	]}
+	{"visit" : [
+		{"sample.txt" : 1}
+	]}
+	{"visitation" : [
+		{"sample.txt" : 1}
+	]}
+	{"vote" : [
+		{"sample.txt" : 3}
+	]}
+	{"voted" : [
+		{"sample.txt" : 2}
+	]}
+	{"voter" : [
+		{"sample.txt" : 1}
+	]}
+	{"voters" : [
+		{"sample.txt" : 2}
+	]}
+	{"voting" : [
+		{"sample.txt" : 1}
+	]}
+	{"ward" : [
+		{"sample.txt" : 1}
+	]}
+	{"was" : [
+		{"sample.txt" : 8}
+	]}
+	{"washington" : [
+		{"sample.txt" : 1}
+	]}
+	{"way" : [
+		{"sample.txt" : 2}
+	]}
+	{"ways" : [
+		{"sample.txt" : 1}
+	]}
+	{"we" : [
+		{"sample.txt" : 2}
+	]}
+	{"wed" : [
+		{"sample.txt" : 2}
+	]}
+	{"wednesday" : [
+		{"sample.txt" : 6}
+	]}
+	{"were" : [
+		{"sample.txt" : 3}
+	]}
+	{"what" : [
+		{"sample.txt" : 1}
+	]}
+	{"when" : [
+		{"sample.txt" : 5}
+	]}
+	{"where" : [
+		{"sample.txt" : 1}
+	]}
+	{"whether" : [
+		{"sample.txt" : 1}
+	]}
+	{"which" : [
+		{"sample.txt" : 4}
+	]}
+	{"who" : [
+		{"sample.txt" : 5}
+	]}
+	{"whose" : [
+		{"sample.txt" : 1}
+	]}
+	{"will" : [
+		{"sample.txt" : 9}
+	]}
+	{"win" : [
+		{"sample.txt" : 1}
+	]}
+	{"with" : [
+		{"sample.txt" : 7}
+	]}
+	{"witnessed" : [
+		{"sample.txt" : 1}
+	]}
+	{"woman" : [
+		{"sample.txt" : 3}
+	]}
+	{"wonder" : [
+		{"sample.txt" : 1}
+	]}
+	{"word" : [
+		{"sample.txt" : 1}
+	]}
+	{"words" : [
+		{"sample.txt" : 1}
+	]}
+	{"world" : [
+		{"sample.txt" : 1}
+	]}
+	{"would" : [
+		{"sample.txt" : 6}
+	]}
+	{"wouldn" : [
+		{"sample.txt" : 1}
+	]}
+	{"year" : [
+		{"sample.txt" : 1}
+	]}
+	{"years" : [
+		{"sample.txt" : 2}
+	]}
+	{"yes" : [
+		{"sample.txt" : 1}
+	]}
+	{"yet" : [
+		{"sample.txt" : 1}
+	]}
+	{"york" : [
+		{"sample.txt" : 1}
+	]}
+	{"you" : [
+		{"sample.txt" : 3}
+	]}
+]}
+Execution Time: 0.006213s
