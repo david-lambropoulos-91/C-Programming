@@ -1,1 +1,1 @@
-# Project3-Game_of_Life
+# Game_of_Life
